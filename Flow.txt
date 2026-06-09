@@ -1,0 +1,10 @@
+STEP 1  →  Skeleton + setup.py + requirements.txt   ✅ Done
+STEP 2  →  logger.py
+STEP 3  →  exception.py
+STEP 4  →  utils.py
+STEP 5  →  data_ingestion.py
+STEP 6  →  data_transformation.py
+STEP 7  →  model_trainer.py
+STEP 8  →  train_pipeline.py
+STEP 9  →  predict_pipeline.py
+STEP 10 →  main.py + end-to-end run

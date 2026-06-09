@@ -1,0 +1,25 @@
+# Virtual Environment
+venv/
+
+# Logs
+logs/
+
+# Artifacts
+artifacts/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

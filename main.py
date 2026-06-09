@@ -1,4 +1,8 @@
 from src.logger import logger
+from src.exception import CustomException
+import sys
 
-logger.info("Logger is working!")
-logger.info("Project started successfully")
+try:
+    a = 1 / 0
+except Exception as e:
+    raise CustomException(e, sys)
