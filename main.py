@@ -1,8 +1,8 @@
-from src.logger import logger
-from src.exception import CustomException
-import sys
+from src.utils import utils
 
-try:
-    a = 1 / 0
-except Exception as e:
-    raise CustomException(e, sys)
+test_obj = {'name': 'House_price_pred', 'version': 1}
+
+utils.save_object("artifacts/test.pkl", test_obj)
+loaded = utils.load_object("artifacts/test.pkl")
+
+print(loaded)
