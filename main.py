@@ -1,8 +1,9 @@
 from src.utils import Utils
 
-test_obj = {'name': 'House_price_pred', 'version': 1}
+# Test reading config
+config = Utils.read_yaml("config/config.yaml")
+params = Utils.read_yaml("config/params.yaml")
 
-Utils.save_object("artifacts/test.pkl", test_obj)
-loaded = Utils.load_object("artifacts/test.pkl")
-
-print(loaded)
+print(config)
+print("---")
+print(params)
