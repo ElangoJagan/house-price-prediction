@@ -4,19 +4,21 @@ import dill
 import numpy as np
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
+import yaml
 
 from src.logger import logger
 from src.exception import CustomException
 
-class utils:
+class Utils:
     
-     """
+    """
     Reusable utility functions used across all components.
     - save_object   : serialize and save any Python object
     - load_object   : load a saved Python object
     - evaluate_models : train, tune and evaluate multiple models
-    - read_yaml     : read yaml config files
+    - read_yaml     : read yaml config files 
     """
+
     
     
     @staticmethod
@@ -39,7 +41,7 @@ class utils:
     def load_object(file_path:str):
         'Loads a stored python obj from the folder '
         try:
-            logger.info('Load python object from {file_path}')
+            logger.info(f'Load python object from {file_path}')
             
             with open(file_path, 'rb') as file_obj:
                 obj = dill.load(file_obj)   
@@ -58,7 +60,7 @@ class utils:
         try:
             report = {}
             
-            for model, model_name in models.items():
+            for model_name, model in models.items():
                 logger.info('Training model is {model_name}')
                 param_grid = params.get(model_name, {})
                 
@@ -85,7 +87,7 @@ class utils:
         
     @staticmethod
     def read_yaml(file_path:str):
-            """Reads a yaml file and returns contents as dictionary."""
+        """Reads a yaml file and returns contents as dictionary."""
         try:
             logger.info('reading the file ')
             with open(file_path, 'r') as f:
