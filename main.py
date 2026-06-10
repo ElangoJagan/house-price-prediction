@@ -1,9 +1,7 @@
-from src.utils import Utils
+from src.components.data_ingestion import dataIngestion
 
-# Test reading config
-config = Utils.read_yaml("config/config.yaml")
-params = Utils.read_yaml("config/params.yaml")
+obj = dataIngestion()
+train_path, test_path = obj.initiate_data_ingestion()
 
-print(config)
-print("---")
-print(params)
+print(f"Train: {train_path}")
+print(f"Test : {test_path}")
