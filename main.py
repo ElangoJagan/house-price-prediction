@@ -1,7 +1,16 @@
 from src.components.data_ingestion import dataIngestion
+from src.components.data_transformation import DataTransformation
 
-obj = dataIngestion()
-train_path, test_path = obj.initiate_data_ingestion()
+# Step 1
+ingestion = dataIngestion()
+train_path, test_path = ingestion.initiate_data_ingestion()
 
-print(f"Train: {train_path}")
-print(f"Test : {test_path}")
+# Step 2
+transformation = DataTransformation()
+train_arr, test_arr, preprocessor_path = transformation.initiate_data_transformation(
+    train_path, test_path
+)
+
+print(f"Train array shape : {train_arr.shape}")
+print(f"Test array shape  : {test_arr.shape}")
+print(f"Preprocessor saved: {preprocessor_path}")
