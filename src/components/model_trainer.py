@@ -3,10 +3,10 @@ from symtable import Class
 import sys
 from dataclasses import dataclass
 
-from sklearn.linear_model import linearRegression, Ridge, Lasso
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import (RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor)
-from xgboost import XGBRegressor, XGBoostRegressor
+from xgboost import XGBRegressor
 from catboost import CatBoostRegressor
 from sklearn.metrics import r2_score
 
@@ -85,9 +85,9 @@ class ModelTrainer:
             logger.info('Model LeaderBoard')
             
             for name, score in sorted(
-                model_report.items(), key:lamda x: x[1], reverse = True
+                model_report.items(), key=lambda x: x[1], reverse = True
             ):
-            logger.info(f'{name:<25} R2:{score:.4f}')
+                logger.info(f'{name:<25} R2:{score:.4f}')
             logger.info('='*50)
         
             #Step 5 - pick best model
